@@ -18,7 +18,7 @@ def linebot(request):
                 text = event['message']['text']
 
                 if message_type == 'text':
-                    if text.lower() == 'ヘルプ' or "へるぷ" or "help":
+                    if text.lower() == 'ヘルプ':
                         help_message = "使い方\n読みたい漫画の名前をメッセージに送ってひさ。その漫画を見れるリンクを送るヒサ！漫画のタイトルに含まれている単語をなるべく短く送ってくれると引っ掛かりやすいひさ。"
                         messages = create_message(help_message)
                     else:
