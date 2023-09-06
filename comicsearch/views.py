@@ -25,12 +25,12 @@ def linebot(request):
                         title = text
                         # 漫画のURLを取得
                         comic_url = create_comic_url(title)
-                        #if comic_url:
+                        if comic_url:
                             # カルーセルメッセージを作成
-                        messages = create_message(comic_url)
-                        #else:
-                        #    # 該当する漫画が見つからない場合のメッセージ
-                        #    messages = create_message(f"「{title}」の漫画は見つかりませんでした。")
+                            messages = create_message(comic_url)
+                        else:
+                            # 該当する漫画が見つからない場合のメッセージ
+                            messages = create_message(f"「{title}」の漫画は見つかりませんでした。")
 
                     line_message = LineBotMSG(messages)
                     line_message.reply(reply_token)
