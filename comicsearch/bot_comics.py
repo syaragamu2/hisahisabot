@@ -15,6 +15,11 @@ def create_comic_url(title):
     # 該当のURLが見つからない場合は None を返す
     return comic_url
 
+def 
+
+
+
+
 def create_carousel(title, comic_url):
     msg = [
         {
