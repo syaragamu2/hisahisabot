@@ -22,3 +22,4 @@ urlpatterns = [
     path("linebot/comicsearch/", include("comicsearch.urls"), name="linebot-recomicsearch"),
 ]
 
+#push実験
