@@ -21,8 +21,6 @@ def linebot(request):
                     if text.lower() == 'ヘルプ':
                         help_message = "使い方\n読みたい漫画の名前をメッセージに送ってひさ。その漫画を見れるリンクを送るヒサ！漫画のタイトルに含まれている単語をなるべく短く送ってくれると引っ掛かりやすいひさ。"
                         messages = create_message(help_message)
-                    elif text.lower() == 'お好み発掘':
-                        
                     else:
                         title = text
                         # 漫画のURLを取得
