@@ -40,4 +40,5 @@ def linebot(request):
 
         return JsonResponse({'message': 'OK'}, status=200)
     else:
-        return JsonResponse({'message': 'Unsupported method'}, status=405)
+        #return JsonResponse({'message': 'Unsupported method'}, status=405)
+        return JsonResponse({'message': 'OK'}, status=200)
