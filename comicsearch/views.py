@@ -8,7 +8,7 @@ import logging
 @csrf_exempt
 def linebot(request):
     logging.info("Received request")
-    
+
     if request.method == 'POST':
         payload = json.loads(request.body.decode('utf-8'))
         logging.info(f"Payload: {payload}")
@@ -16,7 +16,7 @@ def linebot(request):
         events = payload.get('events', [])
         for event in events:
             logging.info(f"Event: {event}")
-            
+
             if event['type'] == 'message':
                 message_type = event['message']['type']
                 reply_token = event['replyToken']
@@ -25,7 +25,7 @@ def linebot(request):
                 if message_type == 'text':
                     logging.info(f"Message Text: {text}")
                     if text.lower() == 'ヘルプ':
-                        help_message = "使い方..."
+                        help_message = "使い方 \n 読みたい漫画の名前をメッセージに送ってひさ。その漫画を見れるリンクを送るヒサ！漫画のタイトルに含まれている単語をなるべく短く送ってくれると引っ掛かりやすいひさ。"
                         messages = create_message(help_message)
                     else:
                         title = text
@@ -41,4 +41,4 @@ def linebot(request):
         return JsonResponse({'message': 'OK'}, status=200)
     else:
         return JsonResponse({'message': 'Unsupported method'}, status=405)
-    
+
