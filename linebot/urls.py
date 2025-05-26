@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("linebot/reply/", include("reply.urls"), name="linebot-reply"),
     path("linebot/comicsearch/", include("comicsearch.urls"), name="linebot-recomicsearch"),
-    path('callback/', linebot_view, name='linebot_callback'),
+    path('linebot/otakara/', include("otakara.urls"), name='linebot_callback'),
 ]
 
 #push実験
