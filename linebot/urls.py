@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from otakara.views import linebot_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("linebot/reply/", include("reply.urls"), name="linebot-reply"),
     path("linebot/comicsearch/", include("comicsearch.urls"), name="linebot-recomicsearch"),
+    path('callback/', linebot_view, name='linebot_callback'),
 ]
 
 #push実験
